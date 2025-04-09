@@ -1,0 +1,45 @@
+version: '3.8'
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    volumes:
+      - ./backend:/app
+    ports:
+      - "8000:8000"
+    command: tail -f /dev/null  # Placeholder, updated in Phase 2
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    volumes:
+      - ./frontend:/app
+    ports:
+      - "3000:3000"
+    command: tail -f /dev/null  # Placeholder, updated in Phase 3
+
+  desktop:
+    build:
+      context: ./desktop
+      dockerfile: Dockerfile
+    volumes:
+      - ./desktop:/app
+    command: tail -f /dev/null  # Placeholder, updated in Phase 4
+
+  ganache:
+    image: trufflesuite/ganache:latest
+    ports:
+      - "8545:8545"
+    command: ganache --host 0.0.0.0 --port 8545 --chain.networkId 1337
+
+  truffle:
+    build:
+      context: ./blockchain
+      dockerfile: Dockerfile
+    volumes:
+      - ./blockchain:/app
+    depends_on:
+      - ganache
+    command: tail -f /dev/null  # Placeholder, updated below

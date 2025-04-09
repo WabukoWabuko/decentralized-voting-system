@@ -1,0 +1,13 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "React frontend for Decentralized Voting System",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.5",
+    "web3": "^4.16.0"
+  }
+}

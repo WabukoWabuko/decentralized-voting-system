@@ -1,0 +1,8 @@
+{
+  "name": "blockchain",
+  "version": "1.0.0",
+  "description": "Blockchain for Decentralized Voting System",
+  "main": "index.js",
+  "scripts": {},
+  "dependencies": {}
+}
